@@ -1,0 +1,45 @@
+{
+  "app": {
+    "portNumber": 8080,
+    "routes": [
+      {
+        "route": "/api/user",
+        "type": "module",
+        "module": "server/api/user"
+      },
+      {
+        "route": "/api/widgets",
+        "type": "module",
+        "module": "server/api/widgets"
+      },
+      {
+        "route": "/api/teams/",
+        "type": "module",
+        "module": "server/api/teams/next-game"
+      }
+    ]
+  },
+  "databases": [{
+    "host": "127.0.0.1",
+    "port": "27017",
+    "db": "erg",
+    "schemas": "./server/schemas.js",
+    "handle": "_"
+  }],
+  "authentication": {
+    "strategy": "social",
+    "maintenance": "token",
+    "clientReturnUrl": "http://localhost:3000"
+  },
+  "secrets": {
+    "cookieSecret": "catsaretheinternet",
+    "authTokenSecret": "catsaretheinternet"
+  },
+  "oauth": {
+    "facebook": {
+      "clientID": "1011660208860097",
+      "clientSecret": "58e758efa91b6ce7de2ec443855ee1d6",
+      "callbackURL": "http://local.codebeard.io:8080/auth/facebook/callback"
+    }
+  }
+}

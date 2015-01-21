@@ -1,1 +1,4 @@
 node_modules/
+build/
+TODO.md
+.sass-cache/
